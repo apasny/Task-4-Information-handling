@@ -1,4 +1,6 @@
-package com.epam;
+package com.epam.parser;
+
+import com.epam.component.Composite;
 
 public interface Parser {
 

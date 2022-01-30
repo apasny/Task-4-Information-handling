@@ -1,14 +1,21 @@
-package com.epam;
+package com.epam.parser;
+
+import com.epam.component.Composite;
+import com.epam.component.Lexeme;
+import com.epam.component.LexemeType;
 
 public class SentenceParser extends AbstractParser {
+
+    private static final String REGEXP = "(?<!\\d)\\s(?![\\d])";
 
     public SentenceParser() {
         super(null);
     }
 
+    @Override
     public Composite parse(String text) {
 
-        String[] lexemes = text.split("(?<!\\d)\\s(?![\\dy])");
+        String[] lexemes = text.split(getRegExp());
 
         Composite composite = new Composite();
 
@@ -23,6 +30,11 @@ public class SentenceParser extends AbstractParser {
         }
 
         return composite;
+    }
+
+    @Override
+    public String getRegExp() {
+        return REGEXP;
     }
 
 }

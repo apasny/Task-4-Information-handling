@@ -1,4 +1,6 @@
-package com.epam;
+package com.epam.logic;
+
+import com.epam.component.Composite;
 
 import java.util.Comparator;
 

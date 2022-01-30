@@ -1,4 +1,4 @@
-package com.epam;
+package com.epam.component;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,5 +1,9 @@
 package com.epam;
 
+import com.epam.component.Composite;
+import com.epam.logic.TextLogic;
+import com.epam.parser.ParagraphParser;
+import com.epam.parser.SentenceParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -34,13 +38,13 @@ public class TextParserTest {
     @Test
     public void testParseShouldReturnLexemes() {
 
-        String sentence = "lorem ipsum dolor sit [5 2 + y]";
+        String sentence = "the leap into [13  2 +] electronic typesetting, remaining [3  5 +] essentially [15  3 /] unchanged.";
 
         SentenceParser sentenceParser = new SentenceParser();
 
         Composite result = sentenceParser.parse(sentence);
 
-        Assertions.assertEquals(result.getChildren().size(), 5);
+        Assertions.assertEquals(result.getChildren().size(), 11);
 
     }
 
