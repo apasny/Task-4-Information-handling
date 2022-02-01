@@ -1,15 +1,15 @@
 package com.epam.interpreter;
 
-public class NonTerminalExpression implements Expression{
+public class NonTerminalExpression implements Expression {
 
-    private final Double number;
+    private final String value;
 
-    public NonTerminalExpression(Double number) {
-        this.number = number;
+    public NonTerminalExpression(String value) {
+        this.value = value;
     }
 
     @Override
     public void interpret(Context context) {
-        context.pushValue(number);
+        context.pushValue(value);
     }
 }

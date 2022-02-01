@@ -1,6 +1,5 @@
 package com.epam.parser;
 
-import com.epam.component.Component;
 import com.epam.component.Composite;
 
 public abstract class AbstractParser implements Parser {
@@ -15,12 +14,12 @@ public abstract class AbstractParser implements Parser {
         return successor;
     }
 
-    public Composite parse(String text) {
+    public Composite parse(String input) {
         Composite composite = new Composite();
-        String[] sentences = text.split(getRegExp());
-        for (String sentence: sentences) {
-            Composite sentenceComponent = getSuccessor().parse(sentence);
-            composite.add(sentenceComponent);
+        String[] parts = input.split(getRegExp());
+        for (String part: parts) {
+            Composite partComponent = getSuccessor().parse(part);
+            composite.add(partComponent);
         }
         return composite;
     }

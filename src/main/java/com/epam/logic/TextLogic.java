@@ -4,6 +4,8 @@ import com.epam.component.Component;
 import com.epam.component.Composite;
 import com.epam.parser.Parser;
 import com.epam.parser.TextParserBuilder;
+import com.epam.restorer.Restorer;
+import com.epam.restorer.TextRestorerBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,12 @@ public class TextLogic {
         TextParserBuilder textParserBuilder = new TextParserBuilder();
         Parser parser = textParserBuilder.build();
         return parser.parse(text);
+    }
+
+    public String restore(Composite text){
+        TextRestorerBuilder textRestoreBuilder = new TextRestorerBuilder();
+        Restorer restorer = textRestoreBuilder.build();
+        return restorer.restore(text);
     }
 
     public Composite sortParagraphs(Composite text) {

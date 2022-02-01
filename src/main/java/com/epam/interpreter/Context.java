@@ -5,13 +5,23 @@ import java.util.Deque;
 
 public class Context {
 
-    private final Deque<Double> expressionValues = new ArrayDeque<>();
+    private final Deque<String> expressionValues = new ArrayDeque<>();
 
-    public Double popValue(){
+    public String popValue() {
         return expressionValues.pop();
     }
 
-    public void pushValue(Double value){
+    public void pushValue(String value) {
         expressionValues.push(value);
     }
+
+    public boolean isNumeric(String value) {
+        try {
+            Double.parseDouble(value);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
 }
